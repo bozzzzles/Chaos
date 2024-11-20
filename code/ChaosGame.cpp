@@ -46,8 +46,6 @@ int main()
 		****************************************
 		*/
 	// Prompt user for input 
-		window.draw(instructions);
-		window.display();
 		Event event;
 		while (window.pollEvent(event))
 		{
@@ -107,6 +105,7 @@ int main()
 		****************************************
 		*/
 		window.clear();
+		window.draw(instructions);
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
