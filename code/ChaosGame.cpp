@@ -38,7 +38,7 @@ int main()
 	// Set text
 	Text instructions;
 	instructions.setFont(marioFont);
-	instructions.setString(" Click the screen 3 times to draw your triangle! \nClick once more to start the chaos!");
+	instructions.setString(" Click the screen 3 times to draw your triangle! \n          Click once more to start the chaos!");
 	instructions.setCharacterSize(30); // in pixels, not points!
 	instructions.setFillColor(sf::Color::White);
 
@@ -46,6 +46,7 @@ int main()
 	SoundBuffer marioDeathBuffer;
 	if (!marioDeathBuffer.loadFromFile("Waah Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
+		return 1;
 	}
 
 	Sound marioDeathSound;
@@ -56,6 +57,7 @@ int main()
 	SoundBuffer coinBuffer;
 	if (!coinBuffer.loadFromFile("Mario Coin Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
+		return 1;
 	}
 	
 	Sound coinSound;
@@ -66,6 +68,7 @@ int main()
 	SoundBuffer yahooBuffer;
 	if (!yahooBuffer.loadFromFile("Yahoo Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
+		return 1;
 	}
 
 	Sound yahooSound;
@@ -75,6 +78,7 @@ int main()
 	Music ScaryMonsters;
 	if (!ScaryMonsters.openFromFile("Skrillex - Scary Monsters And Nice Sprites (Official Audio).wav")) {
 		cout << "Error opening music file" << endl;
+		return 1;
 	}
 	ScaryMonsters.setLoop(true);
 	
