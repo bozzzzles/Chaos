@@ -22,6 +22,22 @@ int main()
 	vector<Vector2f> vertices;
 	vector<Vector2f> points;
 
+	// Display instructions for the user using the Text class
+	Font marioFont;
+	// Load font
+	if (!marioFont.loadFromFile("TypefaceMario64-ywA93.otf")) {
+		cout << "Error loading font from file." << endl;
+
+	}
+
+	// Set text
+	Text instructions;
+	instructions.setFont(marioFont);
+	instructions.setString("Click the screen to draw your triangle 3 times!");
+	instructions.setCharacterSize(60); // in pixels, not points!
+	instructions.setFillColor(sf::Color::White);
+
+
 	while (window.isOpen())
 	{
 		/*
@@ -30,6 +46,8 @@ int main()
 		****************************************
 		*/
 	// Prompt user for input 
+		window.draw(instructions);
+		window.display();
 		Event event;
 		while (window.pollEvent(event))
 		{
