@@ -36,6 +36,7 @@ int main()
 	// Load font
 	if (!marioFont.loadFromFile("TypefaceMario64-ywA93.otf")) {
 		cout << "Error loading font from file." << endl;
+		return 1;
 	}
 
 	// Create Swag Mario texture and sprite
@@ -47,14 +48,14 @@ int main()
 	}
 	Sprite swagMario(swagTexture);
 
-	// Create Rap Mario texture and sprite
-	Texture rapTexture;
-	if (!rapTexture.loadFromFile("rapMario.png"))
+	// Create Beat Box Mario texture and sprite
+	Texture bBTexture;
+	if (!bBTexture.loadFromFile("bBMario.png"))
 	{
 		cout << "Error loading png file" << endl;
 		return 1;
 	}
-	Sprite rapMario(rapTexture);
+	Sprite bBMario(bBTexture);
 
 	// Set text
 	Text instructions;
@@ -176,8 +177,8 @@ int main()
 		window.draw(instructions);
 		swagMario.setPosition(0, (pixelHeight / 3));
 		window.draw(swagMario);
-		rapMario.setPosition(pixelWidth * 2 / 3, pixelHeight / 3);
-		window.draw(rapMario);
+		bBMario.setPosition(pixelWidth * 2 / 3, pixelHeight / 3);
+		window.draw(bBMario);
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
