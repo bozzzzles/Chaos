@@ -44,7 +44,7 @@ int main()
 
 	// Create Mario Death Sound
 	SoundBuffer marioDeathBuffer;
-	if (!marioDeathBuffer.loadFromFile("Super Mario 64 (Waaah) - Sound effect.wav")) {
+	if (!marioDeathBuffer.loadFromFile("Waah Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
 	}
 
@@ -54,7 +54,7 @@ int main()
 	
 	// Create Coin Sound
 	SoundBuffer coinBuffer;
-	if (!coinBuffer.loadFromFile("Mario Coin Sound - Sound Effect (HD).mp3")) {
+	if (!coinBuffer.loadFromFile("Coin Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
 	}
 
@@ -64,7 +64,7 @@ int main()
 	// Create Wahoo Sound
 
 	SoundBuffer yahooBuffer;
-	if (!yahooBuffer.loadFromFile("YAHOO! (Super Mario 64) - Sound Effect for editing.mp3")) {
+	if (!yahooBuffer.loadFromFile("Yahoo Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
 	}
 
