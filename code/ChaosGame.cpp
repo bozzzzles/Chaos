@@ -104,7 +104,11 @@ int main()
 		****************************************
 		*/
 		window.clear();
+
+		//instructions
 		window.draw(instructions);
+
+		//vertices
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
@@ -112,11 +116,13 @@ int main()
 		    rect.setFillColor(Color::Blue);
 		    window.draw(rect);
 		}
+
+		//points
 		for (int i = 0; i < points.size(); i++)
 		{
 			CircleShape point;
 			point.setRadius(2);
-			point.setPosition(points[i]);
+			point.setPosition(points.at(i));
 			point.setFillColor(Color::Red);
 			window.draw(point);
 		}
