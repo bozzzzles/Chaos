@@ -21,7 +21,10 @@ int main()
 {
 	srand(time(0));
 	// Create a video mode object
-		VideoMode vm(1920, 1080);
+	int pixelWidth = VideoMode::getDesktopMode().width;
+	int pixelHeight = VideoMode::getDesktopMode().height;
+	VideoMode vm(pixelWidth, pixelHeight);
+
 	// Create and open a window for the game
 	RenderWindow window(vm, "Chaos Game!!", Style::Default);
 	
@@ -171,9 +174,9 @@ int main()
 		*/
 		window.clear();
 		window.draw(instructions);
-		swagMario.setPosition(0, 700);
+		swagMario.setPosition(0, (pixelHeight / 3));
 		window.draw(swagMario);
-		rapMario.setPosition(1300, 700);
+		rapMario.setPosition(pixelWidth * 2 / 3, pixelHeight / 3);
 		window.draw(rapMario);
 		for(int i = 0; i < vertices.size(); i++)
 		{
