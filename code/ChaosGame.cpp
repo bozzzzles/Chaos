@@ -1,4 +1,5 @@
 // Include important C++ libraries here
+// Crosby Myers, Aidan Thowtho
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
@@ -26,6 +27,7 @@ int main()
 		Handle the players input
 		****************************************
 		*/
+	// Prompt user for input 
 		Event event;
 		while (window.pollEvent(event))
 		{
