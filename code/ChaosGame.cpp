@@ -54,23 +54,30 @@ int main()
 	
 	// Create Coin Sound
 	SoundBuffer coinBuffer;
-	if (!coinBuffer.loadFromFile("Mario Coin Sound.wav")) {
+	if (!coinBuffer.loadFromFile("Coin Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
 	}
-
+	
 	Sound coinSound;
 	coinSound.setBuffer(coinBuffer);
 	
 	// Create Wahoo Sound
 
 	SoundBuffer yahooBuffer;
-	if (!yahooBuffer.loadFromFile("Yahoo Sound.wav")) {
+	if (!yahooBuffer.loadFromFile("Yahoo Sound.")) {
 		cout << "Error loading sound from file" << endl;
 	}
 
 	Sound yahooSound;
 	yahooSound.setBuffer(yahooBuffer);
 
+	// Create Scary Monsters and Nice Sprites Music
+	Music ScaryMonsters;
+	if (!ScaryMonsters.openFromFile("Skrillex - Scary Monsters And Nice Sprites (Official Audio).wav")) {
+		cout << "Error opening music file" << endl;
+	}
+	ScaryMonsters.setLoop(true);
+	
 	while (window.isOpen())
 	{
 		/*
@@ -107,6 +114,7 @@ int main()
 				
 					points.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
 					yahooSound.play();
+					ScaryMonsters.play();
 			    }
 			}
 		    }
