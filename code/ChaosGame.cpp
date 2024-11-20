@@ -35,12 +35,23 @@ int main()
 		cout << "Error loading font from file." << endl;
 	}
 
-	Texture texture;
-	if (!texture.loadFromFile("swag.jpg"))
+	// Create Swag Mario texture and sprite
+	Texture swagTexture;
+	if (!swagTexture.loadFromFile("swag.jpg"))
 	{
 		cout << "Error loading jpg file";
+		return 1;
 	}
-	Sprite sprite(texture);
+	Sprite swagMario(swagTexture);
+
+	// Create Rap Mario texture and sprite
+	Texture rapTexture;
+	if (!swagTexture.loadFromFile("rapMario"))
+	{
+		cout << "Error loading jpg file";
+		return 1;
+	}
+	Sprite rapMario(rapTexture);
 
 	// Set text
 	Text instructions;
@@ -161,8 +172,10 @@ int main()
 		*/
 		window.clear();
 		window.draw(instructions);
-		sprite.setPosition(0, 700);
-		window.draw(sprite);
+		swagMario.setPosition(0, 700);
+		window.draw(swagMario);
+		rapMario.setPosition(800, 1000);
+		window.draw(rapMario);
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
