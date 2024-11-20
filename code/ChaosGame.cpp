@@ -35,6 +35,13 @@ int main()
 		cout << "Error loading font from file." << endl;
 	}
 
+	Texture texture;
+	if (!texture.loadFromFile("swag.jpg"))
+	{
+		cout << "Error loading jpg file";
+	}
+	Sprite sprite(texture);
+
 	// Set text
 	Text instructions;
 	instructions.setFont(marioFont);
@@ -154,6 +161,8 @@ int main()
 		*/
 		window.clear();
 		window.draw(instructions);
+		sprite.setPosition(0, 700);
+		window.draw(sprite);
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
