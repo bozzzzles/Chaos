@@ -44,12 +44,14 @@ int main()
 	
 			    if(vertices.size() < 3)
 			    {
-				vertices.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
+					vertices.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
 			    }
 			    else if(points.size() == 0)
 			    {
 				///fourth click
 				///push back to points vector
+				
+					points.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
 			    }
 			}
 		    }
