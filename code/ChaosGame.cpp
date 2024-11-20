@@ -27,7 +27,6 @@ int main()
 	// Load font
 	if (!marioFont.loadFromFile("TypefaceMario64-ywA93.otf")) {
 		cout << "Error loading font from file." << endl;
-
 	}
 
 	// Set text
