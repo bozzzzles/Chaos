@@ -42,16 +42,35 @@ int main()
 	instructions.setCharacterSize(30); // in pixels, not points!
 	instructions.setFillColor(sf::Color::White);
 
-	// Load soundbuffer
-	SoundBuffer marioBuffer;
-	if (!marioBuffer.loadFromFile("Super Mario 64 (Waaah) - Sound effect.wav")) {
+	// Create Mario Death Sound
+	SoundBuffer marioDeathBuffer;
+	if (!marioDeathBuffer.loadFromFile("Super Mario 64 (Waaah) - Sound effect.wav")) {
 		cout << "Error loading sound from file" << endl;
 	}
 
-	Sound marioSound;
-	marioSound.setBuffer(marioBuffer);
-	marioSound.play();
+	Sound marioDeathSound;
+	marioDeathSound.setBuffer(marioDeathBuffer);
+	marioDeathSound.play();
 	
+	// Create Coin Sound
+	SoundBuffer coinBuffer;
+	if (!coinBuffer.loadFromFile("Mario Coin Sound - Sound Effect (HD).mp3")) {
+		cout << "Error loading sound from file" << endl;
+	}
+
+	Sound coinSound;
+	coinSound.setBuffer(coinBuffer);
+	
+	// Create Wahoo Sound
+
+	SoundBuffer yahooBuffer;
+	if (!yahooBuffer.loadFromFile("YAHOO! (Super Mario 64) - Sound Effect for editing.mp3")) {
+		cout << "Error loading sound from file" << endl;
+	}
+
+	Sound yahooSound;
+	yahooSound.setBuffer(yahooBuffer);
+
 	while (window.isOpen())
 	{
 		/*
@@ -79,6 +98,7 @@ int main()
 			    if(vertices.size() < 3)
 			    {
 					vertices.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
+					coinSound.play();
 			    }
 			    else if(points.size() == 0)
 			    {
@@ -86,6 +106,7 @@ int main()
 				///push back to points vector
 				
 					points.push_back(Vector2f(event.mouseButton.x, event.mouseButton.y));
+					yahooSound.play();
 			    }
 			}
 		    }
