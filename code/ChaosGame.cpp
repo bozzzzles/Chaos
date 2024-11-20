@@ -15,7 +15,7 @@ int main()
 {
 	srand(time(0));
 	// Create a video mode object
-	VideoMode vm(1920, 1080);
+		VideoMode vm(1920, 1080);
 	// Create and open a window for the game
 	RenderWindow window(vm, "Chaos Game!!", Style::Default);
 	
@@ -36,7 +36,16 @@ int main()
 	instructions.setCharacterSize(30); // in pixels, not points!
 	instructions.setFillColor(sf::Color::White);
 
+	// Load soundbuffer
+	SoundBuffer marioBuffer;
+	if (!marioBuffer.loadFromFile("Super Mario 64 (Waaah) - Sound effect.wav")) {
+		cout << "Error loading sound from file" << endl;
+	}
 
+	Sound marioSound;
+	marioSound.setBuffer(marioBuffer);
+	marioSound.play();
+	
 	while (window.isOpen())
 	{
 		/*
@@ -92,7 +101,7 @@ int main()
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
 			
-			Vector2f tempVert = vertices[rand() % 3];
+			Vector2f tempVert = vertices[rand()];
 			Vector2f newVert((tempVert.x + points[points.size() - 1].x) / 2,
 							 (tempVert.y + points[points.size() - 1].y) / 2);
 			points.push_back(newVert);
@@ -104,11 +113,7 @@ int main()
 		****************************************
 		*/
 		window.clear();
-
-		//instructions
 		window.draw(instructions);
-
-		//vertices
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
@@ -116,13 +121,11 @@ int main()
 		    rect.setFillColor(Color::Blue);
 		    window.draw(rect);
 		}
-
-		//points
 		for (int i = 0; i < points.size(); i++)
 		{
 			CircleShape point;
 			point.setRadius(2);
-			point.setPosition(points.at(i));
+			point.setPosition(points[i]);
 			point.setFillColor(Color::Red);
 			window.draw(point);
 		}
