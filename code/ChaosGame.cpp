@@ -54,7 +54,7 @@ int main()
 	
 	// Create Coin Sound
 	SoundBuffer coinBuffer;
-	if (!coinBuffer.loadFromFile("Coin Sound.wav")) {
+	if (!coinBuffer.loadFromFile("Mario Coin Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
 	}
 
