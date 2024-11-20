@@ -54,7 +54,7 @@ int main()
 	
 	// Create Coin Sound
 	SoundBuffer coinBuffer;
-	if (!coinBuffer.loadFromFile("Coin Sound.wav")) {
+	if (!coinBuffer.loadFromFile("Mario Coin Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
 	}
 	
@@ -64,7 +64,7 @@ int main()
 	// Create Wahoo Sound
 
 	SoundBuffer yahooBuffer;
-	if (!yahooBuffer.loadFromFile("Yahoo Sound.")) {
+	if (!yahooBuffer.loadFromFile("Yahoo Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
 	}
 
