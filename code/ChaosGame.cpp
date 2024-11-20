@@ -39,7 +39,7 @@ int main()
 	Texture swagTexture;
 	if (!swagTexture.loadFromFile("swag.jpg"))
 	{
-		cout << "Error loading jpg file";
+		cout << "Error loading jpg file" << endl;
 		return 1;
 	}
 	Sprite swagMario(swagTexture);
@@ -48,7 +48,7 @@ int main()
 	Texture rapTexture;
 	if (!swagTexture.loadFromFile("rapMario"))
 	{
-		cout << "Error loading jpg file";
+		cout << "Error loading jpg file" << endl;
 		return 1;
 	}
 	Sprite rapMario(rapTexture);
