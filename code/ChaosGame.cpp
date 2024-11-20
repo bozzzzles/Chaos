@@ -92,7 +92,7 @@ int main()
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
 			
-			Vector2f tempVert = vertices[rand()];
+			Vector2f tempVert = vertices[rand() % 3];
 			Vector2f newVert((tempVert.x + points[points.size() - 1].x) / 2,
 							 (tempVert.y + points[points.size() - 1].y) / 2);
 			points.push_back(newVert);
