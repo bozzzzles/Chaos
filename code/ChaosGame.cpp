@@ -45,8 +45,6 @@ int main()
 		****************************************
 		*/
 	// Prompt user for input 
-		window.draw(instructions);
-		window.display();
 		Event event;
 		while (window.pollEvent(event))
 		{
@@ -93,6 +91,11 @@ int main()
 		    ///select random vertex
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
+			
+			Vector2f tempVert = vertices[rand()];
+			Vector2f newVert((tempVert.x + points[points.size() - 1].x) / 2,
+							 (tempVert.y + points[points.size() - 1].y) / 2);
+			points.push_back(newVert);
 		}
 	
 		/*
@@ -101,6 +104,7 @@ int main()
 		****************************************
 		*/
 		window.clear();
+		window.draw(instructions);
 		for(int i = 0; i < vertices.size(); i++)
 		{
 		    RectangleShape rect(Vector2f(10,10));
