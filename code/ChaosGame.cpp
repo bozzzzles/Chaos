@@ -106,16 +106,12 @@ int main()
 		    ///select random vertex
 		    ///calculate midpoint between random vertex and the last point in the vector
 		    ///push back the newly generated coord.
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < 10; i++)
 			{
 				Vector2f newPoint = generateMp(vertices[rand() % 3], points[points.size() - 1]);
 				points.push_back(newPoint);
 			}
 			
-			Vector2f tempVert = vertices[rand() % 3];
-			Vector2f newVert((tempVert.x + points[points.size() - 1].x) / 2,
-							 (tempVert.y + points[points.size() - 1].y) / 2);
-			points.push_back(newVert);
 		}
 	
 		/*
