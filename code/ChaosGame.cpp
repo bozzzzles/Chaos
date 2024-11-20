@@ -58,7 +58,7 @@ int main()
 	instructions.setFont(marioFont);
 	instructions.setString(" Click the screen 3 times to draw your triangle! \n          Click once more to start the chaos!");
 	instructions.setCharacterSize(30); // in pixels, not points!
-	instructions.setFillColor(sf::Color::Red);
+	instructions.setFillColor(sf::Color::Blue);
 
 	// Create Mario Death Sound
 	SoundBuffer marioDeathBuffer;
