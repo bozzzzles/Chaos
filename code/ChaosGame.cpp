@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <cstdlib>
 
 //Make the code easier to type with "using namespace"
 using namespace sf;
@@ -12,6 +13,7 @@ using namespace std;
 
 int main()
 {
+	srand(time(0));
 	// Create a video mode object
 	VideoMode vm(1920, 1080);
 	// Create and open a window for the game
