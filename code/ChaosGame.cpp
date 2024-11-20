@@ -46,7 +46,7 @@ int main()
 
 	// Create Rap Mario texture and sprite
 	Texture rapTexture;
-	if (!swagTexture.loadFromFile("rapMario.jpg"))
+	if (!rapTexture.loadFromFile("rapMario.jpg"))
 	{
 		cout << "Error loading jpg file" << endl;
 		return 1;
@@ -174,7 +174,7 @@ int main()
 		window.draw(instructions);
 		swagMario.setPosition(0, 700);
 		window.draw(swagMario);
-		rapMario.setPosition(800, 1000);
+		rapMario.setPosition(1300, 700);
 		window.draw(rapMario);
 		for(int i = 0; i < vertices.size(); i++)
 		{
