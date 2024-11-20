@@ -38,7 +38,7 @@ int main()
 	// Set text
 	Text instructions;
 	instructions.setFont(marioFont);
-	instructions.setString(" Click the screen to draw your triangle 3 times!");
+	instructions.setString(" Click the screen 3 times to draw your triangle! \nClick once more to start the chaos!");
 	instructions.setCharacterSize(30); // in pixels, not points!
 	instructions.setFillColor(sf::Color::White);
 
