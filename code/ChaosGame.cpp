@@ -37,18 +37,18 @@ int main()
 
 	// Create Swag Mario texture and sprite
 	Texture swagTexture;
-	if (!swagTexture.loadFromFile("swag.jpg"))
+	if (!swagTexture.loadFromFile("swag.png"))
 	{
-		cout << "Error loading jpg file" << endl;
+		cout << "Error loading png file" << endl;
 		return 1;
 	}
 	Sprite swagMario(swagTexture);
 
 	// Create Rap Mario texture and sprite
 	Texture rapTexture;
-	if (!rapTexture.loadFromFile("rapMario.jpg"))
+	if (!rapTexture.loadFromFile("rapMario.png"))
 	{
-		cout << "Error loading jpg file" << endl;
+		cout << "Error loading png file" << endl;
 		return 1;
 	}
 	Sprite rapMario(rapTexture);
@@ -81,8 +81,7 @@ int main()
 	Sound coinSound;
 	coinSound.setBuffer(coinBuffer);
 	
-	// Create Wahoo Sound
-
+	// Create Yahoo Sound
 	SoundBuffer yahooBuffer;
 	if (!yahooBuffer.loadFromFile("Yahoo Sound.wav")) {
 		cout << "Error loading sound from file" << endl;
