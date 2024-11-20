@@ -112,6 +112,14 @@ int main()
 		    rect.setFillColor(Color::Blue);
 		    window.draw(rect);
 		}
+		for (int i = 0; i < points.size(); i++)
+		{
+			CircleShape point;
+			point.setRadius(2);
+			point.setPosition(points[i]);
+			point.setFillColor(Color::Red);
+			window.draw(point);
+		}
 		window.display();
 	}
 }
